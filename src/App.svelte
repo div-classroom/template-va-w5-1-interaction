@@ -15,6 +15,8 @@
 	let colorScale;
 
 	const canvasSize = 400;
+	const leftPadding = 50;
+	const topPadding = 20;
 	
 	onMount(async () => {
 		const fetched = await fetch("/static/movies.json");
@@ -78,7 +80,7 @@
 
 	<svg id="visualization-activity">
 		{#if data !== undefined}	
-			<g id="scatterplotData" transform="translate(50, 20)">
+			<g id="scatterplotData" transform="translate({leftPadding}, {topPadding})">
 				{#each data as record}
 					<circle 
 						id="datapoint-{record.id}"
@@ -91,7 +93,7 @@
 				{/each}
 			</g>
 			
-			<g id="axes" transform="translate(40, 20)">
+			<g id="axes" transform="translate({leftPadding}, {topPadding})">
 				<line class="axis" y2={canvasSize} />
 				<line class="axis" x2={canvasSize} y1={canvasSize} y2={canvasSize} />
 
@@ -119,7 +121,7 @@
 				</g>				
 			</g>
 
-			<g id="legend" transform="translate({canvasSize + 80}, 30)">
+			<g id="legend" transform="translate({canvasSize + leftPadding + 30}, 30)">
 				{#each popularGenres as genre, index}
 					<g class="legendItem" transform="translate(0, {index * 17})">
 						<rect 
