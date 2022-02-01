@@ -78,6 +78,8 @@
 <main>
 	<h1>In-Class Acitivity by {myName}!</h1>
 
+	<p>WRITE_ONE_SENTENCE_DESCRIPTION_OF_HOW_TO_INVOTE_INTERACTIONS_(MOUSE_CLICK_ON_CIRCLES_TO_SEE_...).</p>
+
 	<svg id="visualization-activity">
 		{#if data !== undefined}	
 			<g id="scatterplotData" transform="translate({leftPadding}, {topPadding})">
