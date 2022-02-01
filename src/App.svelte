@@ -19,7 +19,7 @@
 	const topPadding = 20;
 	
 	onMount(async () => {
-		const fetched = await fetch("/static/movies.json");
+		const fetched = await fetch("static/movies.json");
 		let rawData = (await fetched.json());
 		console.log("rawData", rawData);
 
